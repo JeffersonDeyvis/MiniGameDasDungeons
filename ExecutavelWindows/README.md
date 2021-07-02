@@ -12,6 +12,6 @@ O Pyinstaller pode ser instalado usando o comando: <br>
 ```
 pip install pyinstaller
 ```
- mais informações em: https://pypi.org/project/pyinstaller/
+Mais informações em: https://pypi.org/project/pyinstaller/, https://www.python.org/
 </div>
 <hr>
