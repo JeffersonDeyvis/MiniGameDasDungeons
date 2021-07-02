@@ -64,3 +64,31 @@ Melkor inicia sua exploração na dugeon com 100 de vida e também anda equipado
 </p>
 <hr>
 
+<p>
+Para executar o código basta baixar os arquivos cores.py e dugeons.py e colocá-los no mesmo diretório, e em um computador com o python instalado, basta abrir o terminal ou o editor de texto de sua preferência no diretório onde os arquivos estão instalados e digitar:<br>
+
+```
+python3 dugeons.py
+```
+<br>
+Se o terminal não exibir as cores há uma versão do arquivo dugeons.py que funciona sem o uso das cores, ela se encontra no diretório ExecutavelWindows, baixe o arquivo dugeons.py em seguida basta executar o código com o comando:
+
+```
+python3 dugeons.py
+```
+ou utilizando o seu editor de textos preferido, eu utilizo o vs code, pode ser obtido em:
+
+https://code.visualstudio.com/. <br>
+
+Editores que recomendo:
+<ol>
+<li>VsCode</li>
+<li>Spyder</li>
+</ol>  
+link para download do Spyder: 
+
+https://www.anaconda.com/products/individual, https://www.spyder-ide.org/
+
+
+</p>
+
