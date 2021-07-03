@@ -2,8 +2,8 @@
 <hr>
 
 <div style="text-align: justify"> 
-O jogo consiste de um Mapa com dimensão 10x10,
-nossa tarefa é levar o estimado guerreiro, Melkor, representado por P,
+O jogo consiste de um Mapa, um guerreiro e um tesouro.
+O mapa tem dimensão 10x10,nossa tarefa é levar o estimado guerreiro, Melkor, representado por P,
 da posição 10x10 para a posição 1x1 do mapa, que é onde se encontra o tesouro,
 representado por T, no entanto ele enfrentará algumas dificuldades no caminho: 
 </div>
