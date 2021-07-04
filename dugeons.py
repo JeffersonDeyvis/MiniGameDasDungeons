@@ -15,7 +15,6 @@ class colors:
     light_magenta   = '\033[1;95m'
     end             = '\033[0;0m'
 
-    
 
 def clean_terminal():
     return os.system('cls' if os.name == 'nt' else 'clear')
@@ -55,7 +54,6 @@ def board():
 
     return matrix
     
-
 def movement(matrix,string, word):
     q = str(colors.cyan + 'P' + colors.end)
     for l in range(10):
@@ -132,7 +130,6 @@ def movement(matrix,string, word):
     else:
         return matrix, word
 
-
 def life_implement(word,string,life):
     caractere = {'_':0, '^':-15, '#':-25, '@':-40, '*':-60,'l':20,'':0}    
     
@@ -147,7 +144,6 @@ def life_implement(word,string,life):
         return 100
     else: return life
 
-    
 def victory():
     victory = colors.green + "YOU WIN" + colors.end
     for i in range(21):
@@ -159,7 +155,6 @@ def victory():
         time.sleep(0.1)
         clean_terminal()
 
-
 def print_movement(matrix):
     for l in range(10):
         s = ''
@@ -168,7 +163,36 @@ def print_movement(matrix):
             s += str(cc + "  ")
         print(s)
 
-
+def help(FUNCTION):
+    clean_terminal()
+    board = '*       HELP!      *'
+    l = len(board)
+    line  = '*'*l
+    border = '*'+' '*(l-2) +'*' 
+    d = 'TRAP DAMAGE'
+    print(line)
+    print(board)
+    print(line)
+    print('*' + d.center(l-2) + '*')
+    print('*' + '_  \u2192  0 damage'.center(l-2) + '*')
+    print('*' + '^  \u2192 15 damage'.center(l-2) + '*')
+    print('*' + '#  \u2192 25 damage'.center(l-2) + '*')
+    print('*' + '@  \u2192 40 damage'.center(l-2) + '*')
+    print('*' + '*  \u2192 60 damage'.center(l-2) + '*')
+    print('*' + 'l  \u2192 20 HP    '.center(l-2) + '*')
+    print(line)
+    print('*' + 'MOVEMENT'.center(l-2) + '*')
+    print(border)
+    print('*' + 'W  ... (\u2191)'.center(l-2) + '*')
+    print('*' + 'S  ... (\u2193)'.center(l-2) + '*')
+    print('*' + 'A  ... (\u2190)'.center(l-2) + '*')
+    print('*' + 'D  ... (\u2192)'.center(l-2) + '*')
+    print(border)
+    print(line)
+    key = str(input("\nPRESS ANY KEY..."))
+    time.sleep(1)
+    return (FUNCTION)
+    
 def call():
     T = True
     status  = str(input("\nTYPE YOUR NAME: ")).upper()
@@ -180,14 +204,19 @@ def call():
         v       = 100
         potion  = 3
 
-        s4 = str("\n%s; LIFE - %d; POTIONS - %d.  " %(status, v, potion))
+        s4 = str("\n%s; LIFE - %d; POTIONS - %d. " %(status, v, potion))
         print(colors.light_magenta + s4 + colors.end)
         print_movement(a)
         while True:
             
-            string  = "\nMOVE ON: A(\u2190), W(\u2191), S(\u2193), OR D(\u2192)  OR HEAL YOURSELF: L \u2192 "
+            string  = "\nTYPE: A(\u2190), W(\u2191), S(\u2193), D(\u2192), L, HELP, OR EXIT \u2192 "
             m       = str.lower(input(string))
-            b,L     = movement(a,m,l)
+
+            if m == 'help'.lower():
+                b,L = help(movement(a,m,l))
+            else:
+                b,L     = movement(a,m,l)
+                
             if b == 0:
                 break
             life    = life_implement(L,m,v)
@@ -204,8 +233,12 @@ def call():
                 break
                 
             if m == "exit":
+                clean_terminal()
+                time.sleep(1)
                 lost = 'Did you give up'
-                print(lost.center(40,'*'))
+                print('\n'+ lost.center(40,'*') + "\n")
+                time.sleep(.5)
+                print(colors.red + "ENDING THE GAME..." + colors.end)
                 time.sleep(1)
                 clean_terminal()
                 time.sleep(0.5)
@@ -221,12 +254,10 @@ def call():
         if play_again == 'y':
             T = True
         elif play_again == 'n':
-            print(colors.red + "Finalizando programa..." + colors.end)
+            print(colors.red + "ENDING THE GAME..." + colors.end)
             time.sleep(1)
             clean_terminal()
             T = False
         else: play_again
-
-        
 
 call()
