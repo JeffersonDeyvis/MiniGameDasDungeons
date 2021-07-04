@@ -65,18 +65,16 @@ Melkor inicia sua exploração na dugeon com 100 de vida e também anda equipado
 <hr>
 
 <p>
-Para executar o código basta baixar os arquivos cores.py e dugeons.py e colocá-los no mesmo diretório, e em um computador com o python instalado, basta abrir o terminal ou o editor de texto de sua preferência no diretório onde os arquivos estão instalados e digitar:<br>
+Para executar o código basta baixar o arquivo dugeons.py em um computador com o python instalado, utilizando o seu editor de textos preferido, ou basta abrir o terminal no diretório onde o arquivo está instalado e digitar:<br>
 
 ```
 python3 dugeons.py
 ```
 <br>
-Se o terminal não exibir as cores há uma versão do arquivo dugeons.py que funciona sem o uso das cores, ela se encontra no diretório ExecutavelWindows, baixe o arquivo dugeons.py em seguida basta executar o código com o comando:
 
-```
-python3 dugeons.py
-```
-ou utilizando o seu editor de textos preferido, eu utilizo o vs code, pode ser obtido em:
+Se Você não tiver o python instalado no seu pc e usa windows, ainda é possível jogar o mini-game das Dungeons, basta baixar o arquivo dugeons.exe que se encontra no diretório ExecutavelWindwos/dist. <br>
+ 
+Eu utilizo o vs code, ele pode ser obtido em:
 
 https://code.visualstudio.com/. <br>
 
