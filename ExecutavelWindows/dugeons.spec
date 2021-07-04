@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['dugeons.py'],
-             pathex=['C:\\Users\\jeffe\\Documents\\Dev\\Python\\002'],
+             pathex=['C:\\Users\\jeffe\\Documents\\Dev\\Python\\Dugeons\\MiniGameDasDugeons\\ExecutavelWindows'],
              binaries=[],
              datas=[],
              hiddenimports=[],

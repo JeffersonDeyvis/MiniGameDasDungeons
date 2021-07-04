@@ -1,139 +1,163 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 from sys import exit
 import random
 import time
+import os
 
-print("bem vindo a Dungeon\n")
+class colors:
+    white           = '\033[37m'
+    cyan            = '\033[1;96m'
+    yellow          = '\033[33m'
+    red             = '\033[31m'
+    green           = '\033[32m'
+    blue            = '\033[34m'
+    light_magenta   = '\033[1;95m'
+    end             = '\033[0;0m'
+
+    
+
+def clean_terminal():
+    return os.system('cls' if os.name == 'nt' else 'clear')
+
+def starting():
+    clean_terminal()
+    for i in range(1,6):
+        clean_terminal()
+        print(colors.yellow + "welcome to the dungeons" + colors.end + '\n')
+        a = str(colors.green + "."*i + colors.end)
+        print(colors.green + "starting"+a + colors.end)
+        time.sleep(0.4)
+    clean_terminal()
+
+def loser():
+    lost = colors.red + "YOU LOST " + colors.end
+    Face = colors.red + ":( " + colors.end
+    clean_terminal()
+    for i in range(4):
+        lost_string   = Face*i
+        print('\n' + lost + lost_string)
+        time.sleep(0.5)
+        clean_terminal()
 
 def board():
-    caracter = []
-    counter = 0
-    while counter < 100:
-        if  counter >= 0 and counter < 5:
-            caracter.append("*")
-        elif counter >= 5 and counter < 15:
-            caracter.append("@")
-        elif counter >= 15 and counter < 35:
-            caracter.append("#")
-        elif counter >= 35 and counter < 65:
-            caracter.append("^")
-        elif counter >= 65 and counter < 100:
-            caracter.append("_")
-        counter += 1
-        
-    matrix = []
+    q = str(colors.cyan + 'P' + colors.end)
+    caracter = "*"*5 + "@"*10 +"#"*20 + "^"*30 +"_"*35
+    matrix   = []
+
     for k in range(10):
         matrix.append(["0"]*10)
     for i in range(10):
         for j in range(10):
             matrix[i][j] = random.choice(caracter)
     matrix[0][0] = "T"
-    matrix[9][9] = "P"
+    matrix[9][9] = q
 
     return matrix
     
 
-def movement(matrix,string, lista):
+def movement(matrix,string, word):
+    q = str(colors.cyan + 'P' + colors.end)
     for l in range(10):
         for c in range(10):
-            if matrix[l][c] == "P":
+            if matrix[l][c] == q:
                 x,y = l,c
 
-    if string=="l" or string=="L":
-        return matrix, lista
+    if string=="l":
+        return matrix, word
 
-    if string=="w" or string=="W":
-        if (x) == (9) and y == 9:
-            lista[0] = matrix[x-1][y]
-            matrix[ 9 ][9] = " "
-            matrix[x-1][y] = "P"
-            return matrix, lista
+    if string=="w":
+        if (x,y) == (9,9):
+            word        = matrix[x-1][y]
+            matrix[ 9 ][9]  = " "
+            matrix[x-1][y]  = q
+            return matrix, word
         elif x == 0:
-            print("\nVocê está na borda Norte\n")
-            return matrix, lista
+            print("\nyou are on the north edge\n".upper())
+            time.sleep(2)
+            return matrix, word
         else:
-            matrix[x][y] = lista[0]
-            lista[0] = matrix[x-1][y]
-            matrix[x-1][y] = "P"
+            matrix[x][y]    = word
+            word            = matrix[x-1][y]
+            matrix[x-1][y]  = q
             if (x-1,y) == (0,0):
                 victory()
                 time.sleep(2)
-                return exit()
+                return 0,0
             else:
-                return matrix, lista
+                return matrix, word
         
-    elif string=="s" or string=="S":
+    elif string=="s":
         if x == 9:
-            print("\nVocê está na borda Sul\n")
-            return matrix,lista
+            print("\nyou are on the south edge\n".upper())
+            time.sleep(2)
+            return matrix,word
         else:
-            matrix[x][y] = lista[0]
-            lista[0] = matrix[x+1][y]
-            matrix[x+1][y] = "P"
-            return matrix, lista
+            matrix[x][y]    = word
+            word        = matrix[x+1][y]
+            matrix[x+1][y]  = q
+            return matrix, word
     
-    elif string=="d" or string=="D":
+    elif string=="d":
         if y == 9:
-            print("\nVocê está na borda Leste\n")
-            return matrix,lista
+            print("\nyou are on the east edge\n".upper())
+            time.sleep(2)
+            return matrix,word
         else:
-            matrix[x][y] = lista[0]
-            lista[0] = matrix[x][y+1]
-            matrix[x][y+1] = "P"
-            return matrix, lista
+            matrix[x][y]    = word
+            word        = matrix[x][y+1]
+            matrix[x][y+1]  = q
+            return matrix, word
     
-    elif string=="a" or string=="A":
-        if (x) == (9) and (y) == (9):
-            lista[0] = matrix[x][y-1]
-            matrix[ 9 ][9] = " "
-            matrix[x][y-1] = "P"
-            return matrix, lista
+    elif string=="a":
+        if (x,y) == (9,9):
+            word        = matrix[x][y-1]
+            matrix[ 9 ][9]  = " "
+            matrix[x][y-1]  = q
+            return matrix, word
         elif y == 0:
-            print("\nVocê está na borda Oeste\n")
-            return matrix,lista
+            print("\nyou are on the west edge\n".upper())
+            time.sleep(2)
+            return matrix,word
         else:
-            matrix[x][y] = lista[0]
-            lista[0] = matrix[x][y-1]
-            matrix[x][y-1] = "P"
+            matrix[x][y] = word
+            word = matrix[x][y-1]
+            matrix[x][y-1] = q
             if (x,y-1) == (0,0):
                 victory()
                 time.sleep(2)
-                return exit()
+                return 0,0
             else:
-                return matrix, lista
+                return matrix, word
     else:
-        return matrix, lista
+        return matrix, word
 
 
-def life_implement(lista,string,life):
-
-    if string == "l" or string == "L":
-        life += 20
-        if life > 100:
-            life = 100
-            return life
-        else:
-            return life
+def life_implement(word,string,life):
+    caractere = {'_':0, '^':-15, '#':-25, '@':-40, '*':-60,'l':20,'':0}    
     
-    if lista[0] == "^":
-        life -= 15
-        return life
-    elif lista[0] == "#":
-        life -= 25
-        return life
-    elif lista[0] == "@":
-        life -= 40
-        return life
-    elif lista[0] == "*":
-        life -= 60 
-        return life
-    else:
-        return life
+    if string == 'l':
+        l = caractere[string]
+    elif word in caractere:
+        l = caractere[word]
+    else: return life
     
+    life += l
+    if life > 100:
+        return 100
+    else: return life
+
     
 def victory():
-    print("*"*21)
-    print("*    você_venceu    *")
-    print("*"*21)
+    victory = colors.green + "YOU WIN" + colors.end
+    for i in range(21):
+        line    = colors.green + "*"*i + colors.end
+        clean_terminal()
+        print(line)
+        print(victory.center(i))
+        print(line)
+        time.sleep(0.1)
+        clean_terminal()
 
 
 def print_movement(matrix):
@@ -145,46 +169,64 @@ def print_movement(matrix):
         print(s)
 
 
-def chamamento():
-    
-    a = board()
-    status  = str(input("\nDigite seu nome: "))
-    l       = [""]
-    v       = 100
-    potion  = 3
+def call():
+    T = True
+    status  = str(input("\nTYPE YOUR NAME: ")).upper()
+    while T == True:
+        clean_terminal()
+        starting()   
+        a = board()
+        l       = ''
+        v       = 100
+        potion  = 3
 
-    s4 = str("\n%s; life - %d; pocões - %d.  " %(status, v, potion))
-    print(s4)
-    print_movement(a)
-    while True:
-        m = str(input("\nMova-se: W, A, S, ou D  ou recupere vida:L ->>> "))
-        print("\n")
-
-        b,L     = movement(a,m,l)
-        life    = life_implement(L,m,v)
-        v       = life
-        if m == "l" or m =="L":
-            potion -= 1
-        if potion   <= 0:
-            potion = 0
-        if life     <= 0:
-            print("\nvocê perdeu! :( :( :( \n")
+        s4 = str("\n%s; LIFE - %d; POTIONS - %d.  " %(status, v, potion))
+        print(colors.light_magenta + s4 + colors.end)
+        print_movement(a)
+        while True:
+            
+            string  = "\nMOVE ON: A(\u2190), W(\u2191), S(\u2193), OR D(\u2192)  OR HEAL YOURSELF: L \u2192 "
+            m       = str.lower(input(string))
+            b,L     = movement(a,m,l)
+            if b == 0:
+                break
+            life    = life_implement(L,m,v)
+            v       = life
+            if m == "l" or m =="L":
+                potion -= 1
+            if potion   <= 0:
+                potion = 0
+            if life     <= 0:
+                loser()
+                time.sleep(1)
+                clean_terminal()
+                time.sleep(0.5)
+                break
+                
+            if m == "exit":
+                lost = 'Did you give up'
+                print(lost.center(40,'*'))
+                time.sleep(1)
+                clean_terminal()
+                time.sleep(0.5)
+                break
+            clean_terminal()
+            s5 = str("\n%s; LIFE - %d; POTIONS - %d.  " %(status, life, potion))
+            print(colors.light_magenta + s5 + colors.end)
+            print_movement(b)
+            
+            a = b 
+            l = L
+        play_again = str(input("do you want to play again (Y/N)? ")).lower()
+        if play_again == 'y':
+            T = True
+        elif play_again == 'n':
+            print(colors.red + "Finalizando programa..." + colors.end)
             time.sleep(1)
-            break
-        if m == "exit" or m == "EXIT":
-            print("você desistiu")
-            time.sleep(1)
-            break
+            clean_terminal()
+            T = False
+        else: play_again
 
-        s5 = str("\n%s; life - %d; pocões - %d.  " %(status, life, potion))
-        print(s5)
-        print_movement(b)
-        a = b 
-        l = L
+        
 
-chamamento()
-
-
-
-
-
+call()
