@@ -12,7 +12,7 @@ representado por T, no entanto ele enfrentará algumas dificuldades no caminho:
 <hr>
 
 <p align="center">
-<img width="460" height="300" src="img/dungeons.gif">
+<img width="460" height="300" src="img/dungeons.webm">
 </p>
 
 <p>
@@ -50,6 +50,10 @@ Melkor inicia sua exploração na dungeon com 100 de vida e também anda equipad
 </ol>   
 </p>
 <hr>
+
+<p align="center">
+<img width="460" height="300" src="img/help.webm">
+</p>
 
 <p>
 Para executar o código basta baixar o arquivo dugeons.py em um computador com o python instalado, utilizando o seu editor de textos preferido, ou basta abrir o terminal no diretório onde o arquivo dungeons.py está e digitar:<br>
