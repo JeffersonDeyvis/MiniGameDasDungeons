@@ -14,7 +14,7 @@ Este é um exemplo de como o mapa aparecerá para o usuário (gif no futuro):
 </p>
 
 <hr>
-![](dundeons.gif)
+![Alt text](dundeons.gif)
 <hr>
 
 <p>
