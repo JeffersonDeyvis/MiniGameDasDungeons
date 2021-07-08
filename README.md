@@ -1,4 +1,4 @@
-<h1 align="center"> Este é o mini game das Dugeons </h1>
+<h1 align="center"> Este é o mini game das Dungeons </h1>
 <hr>
 
 <div style="text-align: justify"> 
@@ -53,7 +53,7 @@ O mapa está repleto de armadilhas, cada armadilha causa dano na vida d Melkor:<
 
 <p>
 <div style="text-align: justify"> 
-Melkor inicia sua exploração na dugeon com 100 de vida e também anda equipado com 
+Melkor inicia sua exploração na dungeon com 100 de vida e também anda equipado com 
 3 poções que recuperam a vida perdida:
 </div>
 <ol>
@@ -65,7 +65,7 @@ Melkor inicia sua exploração na dugeon com 100 de vida e também anda equipado
 <hr>
 
 <p>
-Para executar o código basta baixar o arquivo dugeons.py em um computador com o python instalado, utilizando o seu editor de textos preferido, ou basta abrir o terminal no diretório onde o arquivo dugeons.py está e digitar:<br>
+Para executar o código basta baixar o arquivo dugeons.py em um computador com o python instalado, utilizando o seu editor de textos preferido, ou basta abrir o terminal no diretório onde o arquivo dungeons.py está e digitar:<br>
 
 ```
 python3 dugeons.py
