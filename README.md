@@ -13,9 +13,9 @@ representado por T, no entanto ele enfrentará algumas dificuldades no caminho:
 Este é um exemplo de como o mapa aparecerá para o usuário (gif no futuro):
 </p>
 
-<hr>
-![Alt text](dundeons.gif)
-<hr>
+<p>
+![Alt text](dundeons.gif)/ ![](dundeons.gif)
+</p>
 
 <p>
 A movimentação de Melkor é implementada da seguinte forma:<br>
