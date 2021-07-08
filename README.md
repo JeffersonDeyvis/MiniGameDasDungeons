@@ -65,7 +65,7 @@ Melkor inicia sua exploração na dugeon com 100 de vida e também anda equipado
 <hr>
 
 <p>
-Para executar o código basta baixar o arquivo dugeons.py em um computador com o python instalado, utilizando o seu editor de textos preferido, ou basta abrir o terminal no diretório onde o arquivo está instalado e digitar:<br>
+Para executar o código basta baixar o arquivo dugeons.py em um computador com o python instalado, utilizando o seu editor de textos preferido, ou basta abrir o terminal no diretório onde o arquivo dugeons.py está e digitar:<br>
 
 ```
 python3 dugeons.py
