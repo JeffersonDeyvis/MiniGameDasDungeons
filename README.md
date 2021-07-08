@@ -9,13 +9,8 @@ representado por T, no entanto ele enfrentará algumas dificuldades no caminho:
 </div>
 <hr>
 
-<p>
-Este é um exemplo de como o mapa aparecerá para o usuário (gif no futuro):
-</p>
-
-<p>
-![Alt text](img/dungeons.gif)
-<img src="img/dugeons.gif" width="128"/>
+<p align="center">
+<img width="460" height="300" src="img/dungeons.gif">
 </p>
 
 <p>
