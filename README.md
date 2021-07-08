@@ -10,7 +10,7 @@ representado por T, no entanto ele enfrentará algumas dificuldades no caminho:
 <hr>
 
 <p>
-Este é um exemplo de como o mapa aparecerá para o usuário:
+Este é um exemplo de como o mapa aparecerá para o usuário (gif no futuro):
 </p>
 
 
