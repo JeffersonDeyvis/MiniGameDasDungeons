@@ -2,8 +2,10 @@
 <hr>
 
 <div style="text-align: justify"> 
-O jogo consiste de um Mapa, um guerreiro e um tesouro.
-Nossa tarefa é levar o estimado guerreiro, Melkor, representado por P no mapa M<sub>10x10</sub>,
+ O estimado guerreiro, Melkor, junta todas as suas forças para entrar em um lugar sombrio. Após ter
+ coletado as águas da vida dos rios das terras ermas, Melkor, decide entrar nas Dungeons para encontrar 
+ o tesouro perdido de Sadakar.
+ Nossa tarefa é levar o estimado guerreiro, Melkor, representado por P no mapa M<sub>10x10</sub>,
 da posição 10x10 para a posição 1x1 do mapa, que é onde se encontra o tesouro,
 representado por T, no entanto ele enfrentará algumas dificuldades no caminho: 
 </div>
