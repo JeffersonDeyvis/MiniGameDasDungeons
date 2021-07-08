@@ -15,6 +15,7 @@ Este é um exemplo de como o mapa aparecerá para o usuário (gif no futuro):
 
 <p>
 ![Alt text](img/dungeons.gif)
+<img src="img/dugeons.gif" width="128"/>
 </p>
 
 <p>
