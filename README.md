@@ -12,7 +12,7 @@ representado por T, no entanto ele enfrentará algumas dificuldades no caminho:
 <hr>
 
 <p align="center">
-<img width="460" height="300" src="img/dungeons.webm">
+<img width="460" height="300" src="img/dungeons.gif">
 </p>
 
 <p>
@@ -52,7 +52,7 @@ Melkor inicia sua exploração na dungeon com 100 de vida e também anda equipad
 <hr>
 
 <p align="center">
-<img width="460" height="300" src="img/help.webm">
+<img width="460" height="300" src="img/help.gif">
 </p>
 
 <p>
