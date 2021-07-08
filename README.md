@@ -61,19 +61,5 @@ python3 dugeons.py
 
 Se Você não tiver o python instalado no seu pc e usa windows, ainda é possível jogar o mini-game das Dungeons, basta baixar o arquivo dugeons.exe que se encontra no diretório ExecutavelWindwos/dist. <br>
  
-Eu utilizo o vs code, ele pode ser obtido em:
-
-https://code.visualstudio.com/. <br>
-
-Editores que recomendo:
-<ol>
-<li>VsCode</li>
-<li>Spyder</li>
-</ol>  
-link para download do Spyder: 
-
-https://www.anaconda.com/products/individual, https://www.spyder-ide.org/
-
-
-</p>
+Eu utilizo o [vscode](https://code.visualstudio.com/)<br>
 
